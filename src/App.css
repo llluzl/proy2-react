@@ -1,0 +1,294 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+.carousel-inner{
+  background-color: black;
+}
+
+/* Contenedor para mostrar tarjetas en columna (vertical) */
+.cards-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+/* Imágenes de Manualidades: tamaño máximo consistente y responsive */
+.manual-img {
+  max-width: 320px;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* Tarjetas en fila horizontal en pantallas grandes */
+@media (min-width: 992px) {
+  .cards-vertical { flex-direction: row; flex-wrap: wrap; justify-content: center; }
+}
+
+/* Clase reutilizable para fondo de página (igual que Inicio) */
+.page-bg {
+  background-color: ;
+  color: #ffffff;
+  padding-top: 0; /* quitar franja oscura debajo del header */
+}
+
+.page-bg h1, .page-bg h2, .page-bg p {
+  color: #ffffff; /* asegurar texto blanco en encabezados/párrafos */
+}
+
+/* Fondos por página (mismo tamaño que Inicio, pero colores originales) */
+.bg-inicio {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  min-height: 100vh;
+}
+.bg-galeria {
+  background-color: #be2249; /* azul claro */
+  color: #000000;
+  min-height: 5vh;
+}
+.bg-manualidades {
+  background-color: #2b9c34; /* verde claro */
+  color: #000000;
+  min-height: 5vh;
+}
+.bg-recetas {
+  background-color: #9b266e; /* naranja claro */
+  color: #000000;
+  min-height: 2vh;
+}
+.bg-tradiciones {
+  background-color: #801f3f; /* rosa claro */
+  color: #000000;
+  min-height: 5vh;
+  text-align: center;
+}
+
+/* Mantener tamaño consistente: reducir un poco los encabezados como pidió */
+.page-bg h1 { font-size: 1.8rem; }
+.page-bg h2 { font-size: 1.2rem; }
+
+/* Forzar color de las leyendas del carousel a negro (como estaba bien antes) */
+.carousel-caption h5,
+.carousel-caption p {
+  color: #000 !important;
+}
+
+/* Navbar personalizado */
+.app-navbar {
+  background: linear-gradient(90deg, #3b82f6 0%, #9333ea 100%);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.app-navbar .navbar-brand {
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+.app-navbar .nav-link {
+  color: rgba(255,255,255,0.9) !important;
+  margin-right: 0.5rem;
+  transition: color 150ms, background-color 150ms;
+}
+.app-navbar .nav-link:hover {
+  color: #fff !important;
+  background-color: rgba(255,255,255,0.06);
+  border-radius: 6px;
+  padding: 0.25rem 0.5rem;
+}
+.app-navbar .navbar-toggler {
+  border-color: rgba(255,255,255,0.2);
+}
+.app-navbar .navbar-toggler-icon {
+  filter: invert(1) brightness(2);
+}
+
+/* Ajuste para cuando el navbar tenga fondo oscuro y se superponga al contenido */
+.app-navbar + .container-fluid, .app-navbar + .navbar-collapse {
+  z-index: 1050;
+}
+
+/* Videos en carrusel: altura y ajuste responsive */
+.video-carousel-item {
+  height: 60vh;
+  object-fit: cover;
+  background: #000;
+}
+@media (max-width: 576px) {
+  .video-carousel-item { height: 40vh; }
+}
+
+/* Festive Header Styles */
+.festive-header {
+  position: relative;
+  text-align: center;
+  padding: 28px 10px 22px;
+  background-color: #f8f9fa;
+  /* Borde tipo aguayo (superior e inferior) */
+  --aguayo: repeating-linear-gradient(
+    90deg,
+    #7a1f2f 0 16px,
+    #e63946 16px 24px,
+    #ffd166 24px 32px,
+    #06d6a0 32px 40px,
+    #118ab2 40px 48px,
+    #8338ec 48px 56px
+  );
+}
+.festive-header::before,
+.festive-header::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0;
+  height: 10px;
+  background: var(--aguayo);
+  z-index: 1;
+}
+.festive-header::before { top: 0; }
+.festive-header::after { bottom: 0; }
+
+/* Franja con luces */
+.light-strip {
+  position: absolute;
+  top: -8px;
+  left: 0; right: 0;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  z-index: 2;
+  pointer-events: none;
+}
+.bulb {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(0,0,0,0.3);
+  opacity: 0.7;
+  animation: blink 2.2s infinite ease-in-out;
+}
+.bulb.red { background: #e63946; animation-delay: 0s; }
+.bulb.green { background: #2a9d8f; animation-delay: .3s; }
+.bulb.gold { background: #ffd166; animation-delay: .6s; }
+.bulb.blue { background: #118ab2; animation-delay: .9s; }
+@keyframes blink { 0%,100%{opacity:.3; filter:brightness(.9)} 50%{opacity:1; filter:brightness(1.4)} }
+
+/* Copos de nieve */
+.snowflakes {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+.flake {
+  position: absolute;
+  top: -10px;
+  font-size: 14px;
+  color: rgba(255,255,255,0.9);
+  text-shadow: 0 0 4px rgba(0,0,0,0.3);
+  animation: fall linear infinite;
+}
+/* distribuir copos por ancho y variar duración */
+.snowflakes .flake:nth-child(1){ left:5%; animation-duration:7s; }
+.snowflakes .flake:nth-child(2){ left:15%; animation-duration:9s; }
+.snowflakes .flake:nth-child(3){ left:25%; animation-duration:6s; }
+.snowflakes .flake:nth-child(4){ left:35%; animation-duration:8s; }
+.snowflakes .flake:nth-child(5){ left:45%; animation-duration:10s; }
+.snowflakes .flake:nth-child(6){ left:55%; animation-duration:7.5s; }
+.snowflakes .flake:nth-child(7){ left:65%; animation-duration:8.5s; }
+.snowflakes .flake:nth-child(8){ left:75%; animation-duration:9.5s; }
+.snowflakes .flake:nth-child(9){ left:85%; animation-duration:7.8s; }
+.snowflakes .flake:nth-child(10){ left:50%; animation-duration:6.8s; }
+.snowflakes .flake:nth-child(11){ left:30%; animation-duration:9.2s; }
+.snowflakes .flake:nth-child(12){ left:70%; animation-duration:8.2s; }
+@keyframes fall { 0%{ transform: translateY(-10px) } 100%{ transform: translateY(140%) } }
+
+.header-inner{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  z-index: 3;
+}
+.festive-logo{
+  display:inline-flex;
+  width:36px; height:36px;
+}
+.festive-title {
+  font-family: 'Dancing Script', cursive;
+  font-size: 4.5rem;
+  margin: 0;
+  color: #FFD700; /* Gold */
+  text-shadow: 2px 2px 0px #c00, 4px 4px 6px rgba(0,0,0,0.4);
+  font-weight: 700;
+}
+
+.header-controls{ margin-left: 8px; }
+.music-btn{
+  border: none;
+  background: #118ab2;
+  color: #fff;
+  width: 40px; height: 40px;
+  border-radius: 999px;
+  box-shadow: 0 4px 10px rgba(0,0,0,.2);
+  cursor: pointer;
+  transition: transform .15s ease, filter .15s ease;
+}
+.music-btn:hover{ transform: translateY(-1px); filter: brightness(1.05); }
+.music-btn:active{ transform: translateY(0); }
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .festive-title { font-size: 3.2rem; }
+}
+
+@media (max-width: 576px) {
+  .festive-title { font-size: 2.6rem; }
+  .festive-header { padding: 20px 10px 18px; }
+}
