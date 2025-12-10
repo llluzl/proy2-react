@@ -11,11 +11,24 @@ function Tradiciones() {
             details: 'La Misa de Gallo reúne a familias y comunidades para celebrar el nacimiento de Jesús a medianoche del 24. Recomendación: llegar con anticipación, abrigarse y, si es posible, llevar una vela.',
             images: [
                 'https://cdn.bolivia.com/sdi/2024/11/26/inauguran-la-feria-navidena-2024-en-la-paz-1264112.jpg',
-                ''
+                'https://noro.mx/wp-content/uploads/2024/12/Tv-Pacifico-bunuelos.png'
             ],
             mapUrl: 'https://www.google.com/maps?q=Iglesia+San+Francisco+La+Paz'
         },
-                {
+        {
+            id: 'picana-navidad',
+            title: 'Picana Navideña',
+            category: 'Gastronomía',
+            place: 'Hogares y restaurantes',
+            excerpt: 'Guiso tradicional con carnes, choclo y especias para la cena de Nochebuena.',
+            details: 'La picana es un plato emblemático de la Nochebuena paceña. Se prepara con varias carnes (res, pollo, a veces cordero), verduras y especias. Acompáñalo con un buen pan y una bebida caliente.',
+            images: [
+                'https://cdn.bolivia.com/sdi/2022/12/21/los-cuatro-platillos-bolivianos-para-navidad-1100247.jpg',
+                'https://cdn.bolivia.com/sdi/2022/12/21/los-cuatro-platillos-bolivianos-para-navidad-1100247.jpg'
+            ],
+            mapUrl: 'https://www.google.com/maps?q=restaurantes+navidad+La+Paz'
+        },
+        {
             id: 'feria-navidenia',
             title: 'Feria Navideña',
             category: 'Ferias',
@@ -28,7 +41,20 @@ function Tradiciones() {
             ],
             mapUrl: 'https://www.google.com/maps?q=El+Prado+La+Paz'
         },
-                {
+        {
+            id: 'buniuelos-api',
+            title: 'Buñuelos con Api',
+            category: 'Gastronomía',
+            place: 'Puestos callejeros y ferias',
+            excerpt: 'Masa frita dorada con miel acompañada de api morado caliente.',
+            details: 'Un clásico de la temporada. Los buñuelos se sirven con miel o sirope, y el api (bebida de maíz morado) es ideal para el frío paceño. Recomendación: pedirlos recién hechos, crujientes por fuera y suaves por dentro.',
+            images: [
+                'https://noro.mx/wp-content/uploads/2024/12/Tv-Pacifico-bunuelos.png',
+                'https://i.pinimg.com/originals/7c/2e/7a/7c2e7a7c9b2d2b70a59a103bf5ce1a9f.jpg'
+            ],
+            mapUrl: 'https://www.google.com/maps?q=bu%C3%B1uelos+api+La+Paz'
+        },
+        {
             id: 'historia-religiosa',
             title: 'La Historia Religiosa (La Natividad)',
             category: 'Religión',
@@ -115,53 +141,34 @@ La Picana: El plato principal de la cena de Nochebuena es la picana, un guiso tr
     };
 
     return (
-        <div className="tradiciones-container">
+        <>
             <style>{`
-        .tradiciones-container {
-            background-color: #0c1422;
-            background-image:
-                radial-gradient(circle at 15% 35%, rgba(255, 230, 180, 0.18), transparent 25%),
-                radial-gradient(circle at 80% 55%, rgba(180, 220, 255, 0.15), transparent 25%),
-                radial-gradient(circle at 35% 80%, rgba(255, 180, 200, 0.18), transparent 25%),
-                radial-gradient(circle at 50% 20%, rgba(190, 255, 210, 0.15), transparent 25%);
-            animation: टिमटिमाना 10s ease-in-out infinite;
-        }
-
-        @keyframes टिमटिमाना {
-            0%, 100% {
-                background-position: 0% 0%, 100% 0%, 0% 100%, 100% 100%;
-            }
-            50% {
-                background-position: 5% -10%, 95% 10%, -5% 90%, 105% 90%;
-            }
-        }
-        .hero-trad{position:relative; min-height:220px; display:flex; align-items:center; justify-content:center; background:rgba(15, 23, 42, 0.4); overflow:hidden}
-        .hero-trad img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter:brightness(.45); opacity: 0.8}
+        .hero-trad{position:relative; min-height:220px; display:flex; align-items:center; justify-content:center; background:#0f172a; overflow:hidden}
+        .hero-trad img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter:brightness(.45)}
         .hero-trad .inner{position:relative; z-index:1; text-align:center; padding:14px}
-        .hero-title{color:#f8fafc; font-weight:800; font-size:2rem; text-shadow:0 2px 8px rgba(0,0,0,.6)}
-        .hero-sub{color:#e5edf5; max-width:720px; margin:6px auto 0}
+        .hero-title{color:#fff; font-weight:800; font-size:2rem; text-shadow:0 2px 8px rgba(0,0,0,.5)}
+        .hero-sub{color:#e2e8f0; max-width:720px; margin:6px auto 0}
         .filters{display:flex; gap:8px; align-items:center; justify-content:center; flex-wrap:wrap; padding:12px}
-        .pill{border:1px solid rgba(255,255,255,.35); color:#f8fafc; background:rgba(255,255,255,.12); padding:6px 10px; border-radius:999px; cursor:pointer}
-        .pill.active{background:#22c55e; border-color:#22c55e; color:#0b1b0f}
-        .search{background: rgba(255,255,255,0.1); color:#fff; border-radius:8px; border:1px solid rgba(255,255,255,0.3); padding:8px 10px; min-width:220px}
-        .search::placeholder{ color: rgba(255,255,255,0.6)}
+        .pill{border:1px solid rgba(255,255,255,.25); color:#fff; background:rgba(255,255,255,.08); padding:6px 10px; border-radius:999px; cursor:pointer}
+        .pill.active{background:#22c55e; border-color:#22c55e}
+        .search{background:#fff; color:#111; border-radius:8px; border:1px solid #e5e7eb; padding:8px 10px; min-width:220px}
         .grid-trad{display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:12px; padding:12px}
-        .card{border:1px solid rgba(255, 255, 255, 0.2); background:rgba(15, 23, 42, 0.6); backdrop-filter: blur(8px); color:#f0f9ff; border-radius:12px; overflow:hidden; transition: transform 0.2s ease, box-shadow 0.2s ease;}
-        .card:hover{transform:translateY(-4px); box-shadow:0 12px 28px rgba(0,0,0,.4)}
+        .card{border:1px solid rgba(255,255,255,.2); background:rgba(255,255,255,.08); color:#fff; border-radius:12px; overflow:hidden}
+        .card:hover{transform:translateY(-2px); box-shadow:0 10px 22px rgba(0,0,0,.25)}
         .card-img{width:100%; height:160px; object-fit:cover}
         .card-body{padding:10px 12px}
-        .tag{display:inline-block; background:#0ea5e9; color:#041316; font-weight:700; font-size:.75rem; border-radius:999px; padding:2px 8px; margin-bottom:6px}
+        .tag{display:inline-block; background:#0ea5e9; color:#fff; font-size:.75rem; border-radius:999px; padding:2px 8px; margin-bottom:6px}
         .btn{border:none; border-radius:8px; padding:6px 10px; cursor:pointer}
         .btn-primary{background:#2563eb; color:#fff}
         .btn-like{background:#ef4444; color:#fff}
-        .btn-share{background:#0f766e; color:#f0fdfa}
+        .btn-share{background:#14b8a6; color:#fff}
         .btn-map{background:#f59e0b; color:#111}
-        .exp{border-top:1px solid rgba(255,255,255,.2); padding-top:8px; margin-top:8px}
+        .exp{border-top:1px solid rgba(255,255,255,.15); padding-top:8px; margin-top:8px}
         .thumbs{display:flex; gap:6px; flex-wrap:wrap}
-        .thumbs img{width:72px; height:56px; object-fit:cover; border-radius:6px; cursor:pointer; border:1px solid #e5e7eb}
-        .lightbox{position:fixed; inset:0; background:rgba(0,0,0,.9); z-index:3000; display:flex; align-items:center; justify-content:center}
-        .lightbox img{max-width:92vw; max-height:82vh; object-fit:contain; border-radius:8px; box-shadow:0 10px 30px rgba(0,0,0,.5)}
-        .lx-btn{position:absolute; top:12px; background:rgba(255,255,255,.25); color:#fff; border:none; border-radius:8px; padding:6px 10px; cursor:pointer}
+        .thumbs img{width:72px; height:56px; object-fit:cover; border-radius:6px; cursor:pointer; border:1px solid rgba(255,255,255,.25)}
+        .lightbox{position:fixed; inset:0; background:rgba(0,0,0,.85); z-index:3000; display:flex; align-items:center; justify-content:center}
+        .lightbox img{max-width:92vw; max-height:82vh; object-fit:contain; border-radius:8px; box-shadow:0 10px 30px rgba(0,0,0,.4)}
+        .lx-btn{position:absolute; top:12px; background:rgba(255,255,255,.2); color:#fff; border:none; border-radius:8px; padding:6px 10px; cursor:pointer}
         .lx-close{right:12px}
         .lx-prev{left:12px; top:50%; transform:translateY(-50%)}
         .lx-next{right:12px; top:50%; transform:translateY(-50%)}
@@ -217,7 +224,7 @@ La Picana: El plato principal de la cena de Nochebuena es la picana, un guiso tr
                     </article>
                 ))}
                 {filtered.length === 0 && (
-                    <div style={{ color: '#fff', opacity: .9, 'grid-column': '1 / -1', 'text-align': 'center' }}>No hay resultados para tu búsqueda.</div>
+                    <div style={{ color: '#fff', opacity: .9 }}>No hay resultados para tu búsqueda.</div>
                 )}
             </div>
 
@@ -230,7 +237,7 @@ La Picana: El plato principal de la cena de Nochebuena es la picana, un guiso tr
                     <button className="lx-btn lx-next" onClick={(e) => { e.stopPropagation(); setLightbox(s => ({ ...s, idx: (s.idx + 1) % s.imgs.length })) }}>›</button>
                 </div>
             )}
-        </div>
+        </>
     )
 }
 
