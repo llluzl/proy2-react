@@ -2,9 +2,7 @@ import VideoCarousel from './VideoCarousel'
 
 function Galeria() {
     const videos = [
-        '/video.mp4',
-        '/video.mp4',
-        '/video.mp4'
+        
     ]
 
     return (
